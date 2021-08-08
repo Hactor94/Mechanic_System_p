@@ -1,0 +1,7 @@
+/*Website Template by freewebsitetemplates.com*/
+#header .navigation > ul {
+	zoom: 1;
+}
+#body .content .section .blog .comment div ,#body .content .section .blog form {
+	border: 1px solid #e7e7e7;
+}

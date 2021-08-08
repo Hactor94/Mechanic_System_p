@@ -1,0 +1,133 @@
+
+===================================================================================================
+
+package com.example.demo.dao;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import com.example.demo.model.Car;
+
+public interface Car_Repo extends JpaRepository<Car, Integer>{ 
+	List<Car> findByCarStatus(String car_status);
+	
+	@Query(value = "SELECT * FROM car WHERE insurance_reg_number = :reg_number",  nativeQuery = true)
+	List<Car> findByInsurance(int reg_number);
+	
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE car SET mechanic_stuff_number = :stuff_number WHERE carId = :car_id",  nativeQuery = true)
+	void assignMechanic(int stuff_number, int car_id);
+
+	@Query(value = "SELECT * FROM car WHERE car_status = :car_status AND insurance_reg_number = :reg_number",  nativeQuery = true)
+	List<Car> insurance_cars(String car_status, int reg_number);
+	
+	@Query(value = "SELECT * \r\n" + 
+			"FROM client_booking b LEFT JOIN car c \r\n" + 
+			"ON b.booking_id = c.booking_booking_id\r\n" + 
+			"WHERE c.car_id = :carId", nativeQuery = true)
+	List<Car> findAllByCarId(int carId);
+}
+
+==================================================================================
+
+package com.example.demo.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.example.demo.model.Client_Booking;
+
+public interface Client_Booking_Repo extends JpaRepository<Client_Booking, Integer>{
+	Client_Booking findByEmail(String email);
+	void deleteByEmail(String email);
+	
+	@Query(value = "SELECT * FROM client_booking b, car c WHERE b.booking_id = c.booking_booking_id AND c.car_status = :car_status", nativeQuery = true)
+	List<Client_Booking> findByCarStatus(@Param("car_status") String car_status);
+	@Query(value = "SELECT * \r\n" + 
+			"FROM client_booking b LEFT JOIN car c \r\n" + 
+			"ON b.booking_id = c.booking_booking_id\r\n" + 
+			"WHERE c.booking_booking_id IS NULL", nativeQuery = true)
+	List<Client_Booking> findByMechanic();
+	List<Client_Booking> findByInsurance(int reg_number);
+} 
+
+================================================================================================
+
+package com.example.demo.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.example.demo.model.Insurance_Company;
+
+public interface Insurance_Company_Repo extends JpaRepository<Insurance_Company, Integer>{
+
+	Insurance_Company findByEmail(String email);
+	
+	@Query(value = "SELECT * FROM insurance_company c WHERE c.password is null", nativeQuery = true)
+	List<Insurance_Company> new_insurances();
+
+}
+
+=====================================================================================================
+
+package com.example.demo.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.example.demo.model.Mechanic;
+
+public interface Mechanic_Repo extends JpaRepository<Mechanic, Integer>{ 
+	Mechanic findByEmail(String email);
+	@Query(value = "SELECT * FROM mechanic m WHERE m.reset_password_token = :token", nativeQuery = true)
+	Mechanic findResetPasswordToken(String token);
+	
+	@Query(value = "SELECT * FROM mechanic m WHERE m.password is null", nativeQuery = true)
+	List<Mechanic> new_mechanics();
+	
+	@Query(value = "SELECT * \r\n" + 
+			"	FROM mechanic m, service s, service_mechanic ms\r\n" + 
+			"	WHERE m.stuff_number = ms.mechanic_stuff_number\r\n" + 
+			"	AND s.id = ms.service_id\r\n" + 
+			"	AND s.service_type = :service_type", nativeQuery = true)
+	List<Mechanic> findByService(String service_type);
+}
+
+===============================================================================================
+
+package com.example.demo.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.Payment;
+
+public interface Payment_Repo extends JpaRepository<Payment, Integer>{
+
+}
+
+============================================================================================
+
+package com.example.demo.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.Services; 
+
+public interface Service_Repo extends JpaRepository<Services, Integer>{
+	Services findByServiceType(String service_type); 
+}
+
+

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="car_rrrrr" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11b610f8-a8e8-4cec-b770-00ab6504c369">
+	<field name="booking.fname" class="java.lang.String"/>
+	<field name="booking.lname" class="java.lang.String"/>
+	<field name="booking.phone" class="java.lang.String"/>
+	<field name="booking.email" class="java.lang.String"/>
+	<field name="booking.brand" class="java.lang.String"/>
+	<field name="booking.model" class="java.lang.String"/>
+	<field name="booking.car_year" class="java.lang.Integer"/>
+	<field name="carStatus" class="java.lang.String"/>
+	<field name="mechanic.fname" class="java.lang.String"/>
+	<field name="mechanic.lname" class="java.lang.String"/>
+	<field name="mechanic.phone" class="java.lang.String"/>
+	<field name="mechanic.email" class="java.lang.String"/>
+	<field name="insurance.company_name" class="java.lang.String"/>
+	<field name="insurance.phone" class="java.lang.String"/>
+	<field name="insurance.email" class="java.lang.String"/>
+	<field name="booking.service_type" class="java.lang.String"/>
+	<field name="total_cost" class="java.lang.Double"/>
+	<background>
+		<band height="86"/>
+	</background>
+	<title>
+		<band height="53">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="589" height="73" backcolor="#006699" uuid="045ca4a6-8fc2-4c8a-ab4a-2ab9fa77bc09"/>
+				<staticText>
+					<reportElement x="20" y="10" width="462" height="43" forecolor="#FFFFFF" uuid="c2fb7efb-4c39-40de-b77b-47f139654114"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mechanic_Isurance System]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="479" y="50" width="104" height="20" forecolor="#FFFFFF" uuid="87557192-f5f9-4403-920a-87ae6689647d"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Car Report]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="5" width="268" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4d026d65-ea3a-4e6e-9417-3df8fb246581">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cc2df0c-da61-47ab-ba4f-f90e170b07b8"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Client]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="288" y="5" width="281" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b0724a61-9bd6-4909-b982-176d5606f66c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad72856-7983-426c-add5-0c193e3b8f7b"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Insurance]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="153">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="-5" width="100" height="20" uuid="29c22844-a51a-407c-9872-5ea92804cc47">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="19f0437c-99f6-4a71-a638-310d8d9f8b62"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.fname}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="110" y="-5" width="158" height="20" uuid="57164d2c-c8e2-49ed-8606-00fe495d2672">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3344f1b5-25d2-4e7d-8a7d-c98a2a38305a"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.lname}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="15" width="100" height="20" uuid="722e7617-0c0f-44ae-8288-73f3e8b3d622">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d9b9fc0-fae0-4588-90b0-52e66ed51e18"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.phone}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="110" y="15" width="158" height="20" uuid="55804da0-82c6-43cc-8967-c2912077a17b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9ff75592-f307-425d-9bf2-c507839fb1d0"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.email}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="289" y="71" width="101" height="20" uuid="72c9dcaa-d495-4a36-b50b-85d1fa19703f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="736fb42c-62b5-44e6-9777-5845a578f8b6"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.brand}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="410" y="70" width="60" height="20" uuid="ccdbc989-e3b8-4b12-b284-718eab399030">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e9bf333-99b7-4c16-b871-384f6396d571"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.model}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="488" y="70" width="59" height="20" uuid="424c6010-b4a3-445a-a33d-dd620c4e24d2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3eb78f9d-d943-4fc8-8195-3099c6907ca9"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.car_year}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="129" y="120" width="141" height="19" uuid="123c825c-eccf-4ed3-a8e9-ae159642fd54">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffe35ccc-746f-4988-b713-39580733cdcf"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{carStatus}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="1" y="71" width="99" height="20" uuid="05a1ad02-75e1-41f5-a2ed-cbb55fb1d0f0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="832d092f-10b8-43df-a4b8-3704f5ff2d56"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mechanic.fname}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="110" y="71" width="158" height="20" uuid="4625c122-17c4-4bed-9db4-032c84704774">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5cc2df0c-da61-47ab-ba4f-f90e170b07b8"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mechanic.lname}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="1" y="91" width="99" height="20" uuid="a4872bbe-34d7-4a25-a336-dde9c3035dde">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1fc2c45c-788d-44aa-805e-db17f2f909cb"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mechanic.phone}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="110" y="91" width="158" height="20" uuid="4f67ff36-5427-467c-bbd9-2a0c4f771e0b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e36c8e2e-d0ef-4d2e-bda0-7ecf22c0aa68"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mechanic.email}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="288" y="-5" width="190" height="20" uuid="9ac17947-6538-4656-ac5d-19367b90f0e1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad72856-7983-426c-add5-0c193e3b8f7b"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insurance.company_name}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="420" y="15" width="149" height="20" uuid="0b626d43-8bd9-4810-9833-9feb170d21eb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f3dc782-0ac4-4d6b-ab32-2d990ace1804"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insurance.email}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="358" y="120" width="130" height="19" uuid="7b82611d-9711-41b0-a9a6-3a80241afa94">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3d71ba8-75e9-4ea7-83c5-7b2d1b441664"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking.service_type}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="500" y="120" width="69" height="19" uuid="16d61de3-961a-4702-be01-dc8cccc1c8cd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86170d91-84cc-4237-af5f-ed4cef612077"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_cost}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="288" y="15" width="122" height="20" uuid="360c02df-50d1-4bb6-9c24-3aaeb95a2925">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5c78ed79-86ff-4dbd-a086-4188563e47c4"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insurance.phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="120" width="70" height="19" forecolor="#006699" backcolor="#E6E6E6" uuid="443f12d6-1fe2-4f73-a129-f0958cad18e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3d71ba8-75e9-4ea7-83c5-7b2d1b441664"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="60" y="120" width="60" height="19" forecolor="#006699" backcolor="#E6E6E6" uuid="ada537dd-c244-4f15-bad7-435f42cfaeee">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="86170d91-84cc-4237-af5f-ed4cef612077"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="40" width="268" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9c0a8ccb-f141-4f8b-91f0-4b73c400813a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1fc2c45c-788d-44aa-805e-db17f2f909cb"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mechanic ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="288" y="40" width="281" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a9fdbf6d-d2c2-478c-b826-0d82f80941e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="832d092f-10b8-43df-a4b8-3704f5ff2d56"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Car]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="500" y="98" width="69" height="22" forecolor="#006699" backcolor="#E6E6E6" uuid="ec11b1a9-374e-406c-adf8-9798ee73f54b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3d71ba8-75e9-4ea7-83c5-7b2d1b441664"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Cost]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-20" y="144" width="589" height="1" uuid="9f825fb2-fd94-4e01-975b-c215381d9fb6"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="488" y="90" width="1" height="54" uuid="24fab82c-0f6a-4216-8de4-53a3fd22f5e8"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="489" y="91" width="80" height="1" uuid="5b80fb4c-3123-434a-a5e7-7ac3bb34fe70"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24"/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
